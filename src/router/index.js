@@ -8,7 +8,7 @@ const routes = [
         name: "foodList",
         component: FoodListView
     },
-    {
+    { 
         path: "/food/detail/:fno",
         name: "FoodDetailView",
         component: FoodDetailView

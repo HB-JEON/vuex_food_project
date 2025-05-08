@@ -5,7 +5,7 @@ export const useFoodStore = defineStore('foods', {
     state: () => ({
         food_data: {},
         food_detail: {}
-    }),
+    }), 
     actions: {
         foodListData(page) {
             axios.get('http://127.0.0.1:8000/web/food_list/', {

@@ -7,7 +7,7 @@
                   <img :src="'https://www.menupan.com'+fd.poster" style="width:230px;height: 150px;">
                     <div class="caption">
                         <p>{{ fd.name }}</p>
-                    </div>
+                    </div> 
                 </router-link>
             </div>
         </div>
