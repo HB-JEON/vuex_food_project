@@ -1,0 +1,38 @@
+import { defineStore } from "pinia";
+import axios from "axios";
+
+export const useFoodStore = defineStore('foods', {
+    state: () => ({
+        food_data: {},
+        food_detail: {}
+    }),
+    actions: {
+        foodListData(page) {
+            axios.get('http://127.0.0.1:8000/web/food_list/', {
+                params: {
+                    page: page
+                }
+            }).then(res => {
+                this.food_data = res.data
+            })
+        },
+        range(start, end) {
+            let arr = []
+            let len = end - start + 1
+            for(let i=0; i<len; i++) {
+                arr[i] = start
+                start++
+            }
+            return arr
+        },
+        foodDetailData(fno) {
+            axios.get('http://127.0.0.1:8000/web/food_detail/', {
+                params: {
+                    fno: fno
+                }
+            }).then(res => {
+                this.food_detail = res.data
+            })
+        }
+    } 
+})
